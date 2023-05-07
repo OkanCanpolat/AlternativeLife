@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -25,5 +26,6 @@ public class Spawner : MonoBehaviour
             elapsedTime++;
         }
         Destroy(gameObject);
+        SceneManager.LoadScene("Scene1");
     }
 }

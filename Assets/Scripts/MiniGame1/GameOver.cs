@@ -7,6 +7,6 @@ public class GameOver : MonoBehaviour
 {
     public void GameOverBtn()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("AnaMenu");
     }
 }
