@@ -7,6 +7,9 @@ TagManager:
   - Life
   - Shield
   - Obstacle
+  - Changer
+  - DiscoBall
+  - Projectile
   layers:
   - Default
   - TransparentFX
