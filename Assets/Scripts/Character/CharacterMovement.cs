@@ -7,17 +7,24 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float movementSpeed;
+    [SerializeField] public float movementSpeed;
     public Animator animator;
     public PolygonCollider2D polygonCollider2D;
     public PolygonCollider2D polygonColliderr2D;
     public CinemachineConfiner2D cinemachineConfiner;
     public Transform SpawnPoint;
-
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Time.timeScale = 1;
+        if (PlayerPrefs.HasKey("x"))
+        {
+            Debug.Log("player prefs");
+            Vector3 pos = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
+            transform.position = pos;
+        }
     }
 
     private void Update()
@@ -37,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
         if (col.gameObject.CompareTag("kapı"))
         {
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && sayac._sayac.sayacArtir>=4)
             {
                 transform.position = SpawnPoint.position;
                 polygonCollider2D.enabled = false;
@@ -45,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
                 Debug.Log("girdi");
                 cinemachineConfiner.m_BoundingShape2D = polygonColliderr2D;
                 Debug.Log("aaaaaaaaaaa");
+                
 
             }
             

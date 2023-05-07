@@ -10,6 +10,10 @@ TagManager:
   - BicirikNoktasi
   - Bicirik
   - npc3
+  - Shield
+  - Life
+  - Obstacle
+  - win
   layers:
   - Default
   - TransparentFX

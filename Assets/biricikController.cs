@@ -6,6 +6,7 @@ using UnityEngine;
 public class biricikController : MonoBehaviour
 {
     
+    
     void Start()
     {
         
@@ -21,8 +22,7 @@ public class biricikController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("biricik Buluşması");
-            transform.position = Vector2.zero;
+            SceneController.sceneController.MiniGame1();
         }
         
     }

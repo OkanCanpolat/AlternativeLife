@@ -1,17 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
 public class bicirikBulusmasi : MonoBehaviour
 {
     public bool isDragging=false;
     public GameObject hava1, hava2,bicirik;
-    void Start()
-    {
-        
-    }
-
+    public CharacterMovement characterMovement;
     // Update is called once per frame
     void Update()
     {
@@ -27,13 +24,16 @@ public class bicirikBulusmasi : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             isDragging=true;
-            col.gameObject.transform.position = Vector2.zero;
+            characterMovement.movementSpeed = 0;
+            DialogueLua.SetVariable("diyalog2",true);
+
         }
     }
 
     public void bekle()
     {
             bicirik.transform.Translate(0,-5*Time.deltaTime,0);
+            
     }
 
     public void hava()
