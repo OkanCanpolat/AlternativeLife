@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame2.unity
     guid: d45d0b4906262d741897732ff470956a
+  - enabled: 1
+    path: Assets/Scenes/AnaMenu.unity
+    guid: db2caeaa91b1d1f41808781046e3221c
   m_configObjects: {}

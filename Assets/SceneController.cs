@@ -15,15 +15,9 @@ public class SceneController : MonoBehaviour
         sceneController = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MiniGame3(string str)
     {
-        
-    }
-
-    public void MiniGame1()
-    {
-        SceneManager.LoadScene("MiniGame1");
+        SceneManager.LoadScene(str);
     }
     public void MiniGame2()
     {
@@ -31,6 +25,14 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.SetFloat("y",Karakter.position.y);
         PlayerPrefs.SetFloat("z",Karakter.position.z);
         SceneManager.LoadScene("MiniGame2");
+    }
+
+    public void MiniGame1()
+    {
+        PlayerPrefs.SetFloat("x", Karakter.position.x);
+        PlayerPrefs.SetFloat("y", Karakter.position.y);
+        PlayerPrefs.SetFloat("z", Karakter.position.z);
+        SceneManager.LoadScene("MiniGame1");
     }
     public void OyunEkrani()
     {

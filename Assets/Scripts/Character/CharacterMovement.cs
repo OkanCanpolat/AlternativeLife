@@ -20,8 +20,11 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip audioClip;
 
 
+    public SpriteRenderer rnd;
+    
     private void Awake()
     {
+        rnd = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Time.timeScale = 1;
@@ -42,6 +45,16 @@ public class CharacterMovement : MonoBehaviour
 
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
+
+        if(horizontal > 0)
+        {
+            rnd.flipX = true;
+        }
+
+        else
+        {
+            rnd.flipX = false;
+        }
 
     }
 

@@ -2688,6 +2688,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 579399d2-73dd-4fd4-bebd-dd8c98ae7f64
+        type: 0
+        typeString: 
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -2720,7 +2724,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 1.7384224, y: 0}
     canvasZoom: 0.94000006
   syncInfo:
     syncActors: 0
