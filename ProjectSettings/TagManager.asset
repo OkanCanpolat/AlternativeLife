@@ -13,7 +13,13 @@ TagManager:
   - Shield
   - Life
   - Obstacle
+<<<<<<< HEAD
   - win
+=======
+  - Changer
+  - DiscoBall
+  - Projectile
+>>>>>>> 1c28c413e2354c04be3f80d2896779fc17287a3c
   layers:
   - Default
   - TransparentFX
