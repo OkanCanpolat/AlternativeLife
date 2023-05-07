@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - "kap\u0131"
+  - npc1
+  - npc2
+  - BicirikNoktasi
+  - Bicirik
+  - npc3
   layers:
   - Default
   - TransparentFX
