@@ -21,5 +21,10 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * movementSpeed, vertical * movementSpeed);
     }
 
+    public void VelocityZero()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
 
 }
