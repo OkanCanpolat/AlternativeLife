@@ -13,7 +13,13 @@ public class CharacterMovement : MonoBehaviour
     public PolygonCollider2D polygonColliderr2D;
     public CinemachineConfiner2D cinemachineConfiner;
     public Transform SpawnPoint;
-    
+    public GameObject image1, image2;
+    public bool resimGecis;
+    private GameObject obj;
+    public AudioSourcee audioSource;
+    public AudioClip audioClip;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,30 +39,50 @@ public class CharacterMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(horizontal * movementSpeed, vertical * movementSpeed);
-        
-        animator.SetFloat("Horizontal",horizontal);
+
+        animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
 
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("kapı"))
+        if (col.gameObject.CompareTag("kapı") == sayac._sayac.sayacArtir >=5)
         {
 
-            if (Input.GetKeyDown(KeyCode.Space) && sayac._sayac.sayacArtir>=4)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                transform.position = SpawnPoint.position;
-                polygonCollider2D.enabled = false;
-                polygonColliderr2D.enabled = true;
-                Debug.Log("girdi");
-                cinemachineConfiner.m_BoundingShape2D = polygonColliderr2D;
-                Debug.Log("aaaaaaaaaaa");
-                
-
+                StartCoroutine(imageGecis());
             }
-            
+
         }
+
+        if (col.gameObject.CompareTag("npc5"))
+        {
+            audioSource.sesiCal(audioClip);
+        }
+        
     }
 
+    public IEnumerator imageGecis()
+    {
+        yield return new WaitForSeconds(3.0f);
+        image1.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        image1.SetActive(false);
+        image2.SetActive(true);
+        yield return new WaitForSeconds(4.0f);
+        image2.SetActive(false);
+        resimGecis = true;
+        transform.position = SpawnPoint.position;
+        polygonCollider2D.enabled = false;
+        polygonColliderr2D.enabled = true;
+        Debug.Log("girdi");
+        cinemachineConfiner.m_BoundingShape2D = polygonColliderr2D;
+        obj = GameObject.FindWithTag("kapı");
+        obj.tag = "kapi";
+    }
+
+
 }
+
