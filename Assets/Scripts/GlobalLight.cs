@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class GlobalLight : MonoBehaviour
 {
     public Light2D lightt;
+    public LightCutscene[] spotLights;
 
     private void Awake()
     {
@@ -21,6 +22,13 @@ public class GlobalLight : MonoBehaviour
         PlayerPrefs.SetInt("Ýlk", 2);
     }
 
+    public void SpotLights()
+    {
+        foreach(LightCutscene l in spotLights)
+        {
+            l.StartLights();
+        }
+    }
     public IEnumerator Kapat()
     {
         yield return new WaitForSeconds(4);
